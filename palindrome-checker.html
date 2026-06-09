@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="projectnav"><a href="index.html">home</a></body><div>
+
+	<h1>we can checking the worlds</h1>
+
+	<div id="UI">
+		<input type="text" id="inputstring" placeholder="back words?">
+		<button id="thebutton">check </button>
+		<p id="feedback">le feedback ici</p>
+	</div>
+
+	<script>
+		console.clear();
+		console.log("bonjour!");
+
+		const thefeedback = document.getElementById("feedback");
+		thefeedback.innerHTML="bla bla chaton"
+		const thebutton = document.getElementById("thebutton");
+		thebutton.addEventListener("click", checkTheText);
+
+		function checkTheText(){
+			const theinput = document.getElementById("inputstring")
+			console.log(theinput.value);
+
+			checkpalindrome(theinput.value);
+
+			if(input.value == "chaton"){
+			console.log("yes.");
+			thefeedback.innerHTML = "error: input is a kitchen";
+			}
+
+			else{
+				console.log("no");
+				thefeedback.innerHTML = "no.";
+			}
+		} // check the texts
+
+		function checkpalindrome (str){
+			console.log("palindrome check: " + str);
+		}
+
+		theletters = str.split("");
+		console.log (theletters)
+
+	</script>
+</body>
+</html>

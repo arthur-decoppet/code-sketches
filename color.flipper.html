@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>web dev - color flipper</title>
+	<style>
+		body {
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+	<h1> we can flipping the colors! </h1>
+	
+	<button onclick='setcolor("blue");' >Papaya-Whip</button>
+	<button onclick='setcolor("Peachpuff");' >Peach-Puff</button>
+	<button onclick='setcolor("Powderblue");' >Powder-Blue</button>
+
+	<br><br>
+	<button onClick="randomColor()">Random</button>
+
+	<script>
+		const body = document.getElementsByTagName("body")[0];
+		// body.style.backgroundColor = "red";
+		setcolor("magenta");
+		function setcolor(name){
+		 body.style.backgroundColor = name;
+		}
+
+		function randomColor(){
+			console.log("hi");
+			let R = Math.round(Math.random() * 255);
+			let V = Math.round(Math.random() * 255);
+			let B = Math.round(Math.random() * 255);
+
+			//plus stupide est chiante
+			let theColor = "rgb(" + R + "," + V + "," + B + ")";
+
+			//plus élégant
+			theColor = `rgb( ${R} , ${V} , ${B} )`;
+
+			body.style.backgroundColor = theColor;
+
+			if(R+V+B <400){
+				body.style.color = "white";
+			}
+			else{
+				body.style.color = "black";
+			}
+		}
+	</script>
+</body>
+</html>

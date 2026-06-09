@@ -1,14 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Arthur</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="p5.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaton</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- <script src="p5.js"></script> -->
+    <!-- <script src="circles.js"></script> -->
+
 </head>
 <body>
-	<h1>I love coding</h1>
-	<script src="circles.js"></script>
+    <h1>code experiments</h1>
+
+    <div class="gallery">
+        
+        <a href="circles.html">
+            <img src="circles.png" alt="">
+        </a>
+
+        <a href="rectangle-1.html"><img src="rectangle-1.png" alt=""></a>
+        <a href="stupid-line-1.html"><img src="stupid-line-1.png" alt=""></a>
+        <a href="solar-round.html"><img src="solar-round.png" alt=""></a>
+        <a href="cater-miskine.html"><img src="cater-love.png" alt=""></a>
+        <a href="3-balls.html"><img src="3-balls.png" alt=""></a>
+        <a href="arc-en-ciel.html"><img src="arc-en-ciel.png" alt=""></a>
+        <a href="are-you-ok.html"><img src="are-you-ok.png" alt=""></a>
+        <a href="click-on-me.html"><img src="click-on-me.png" alt=""></a>
+        <a href="eye.html"><img src="eye.png" alt=""></a>
+        <a href="hey-kids.html"><img src="hey-kids.png" alt=""></a>
+        <a href="infinite-circle.html"><img src="infinite-circle.png" alt=""></a>
+        <a href="love-is-the-message.html"><img src="love-is-the-message.png" alt=""></a>
+        <a href="what.html"><img src="what.png" alt=""></a>
+        <a href="atlantic/atlantic.html"><img src="atlantic/atlantic.png" alt=""></a>
+        <a href="cater-wave/cater-wave.html"><img src="cater-wave/cater-wave.png" alt=""></a>
+        <a href="life-2026/life-2026.html"><img src="life-2026/life-2026.png" alt=""></a>
+        <a href="paille/paille.html"><img src="paille/paille.png" alt=""></a>
+        <a href="tchou-tchou/tchou-tchou.html"><img src="tchou-tchou/tchou-tchou.png" alt=""></a>
+        <a href="why/why.html"><img src="why/why.png" alt=""></a>
+    </div>
+
+
+    <div class="lb" id="lb" aria-hidden="true">
+        <button type="button" aria-label="Fermer">×</button>
+        <iframe allow="camera; microphone; autoplay"></iframe>
+    </div>
+    <style>
+        .lb { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; z-index: 9999; }
+        .lb.open { display: block; }
+        .lb iframe { position: absolute; top: 5vh; left: 5vw; width: 90vw; height: 90vh; border: 0; background: #fff; }
+        .lb button { z-index: 99; position: absolute; top: 1rem; right: 1rem; width: 3rem; height: 3rem; font-size: 1.5rem; background: #fff; border: 0; cursor: pointer; }
+    </style>
+    <script>
+        function makeLightbox(){
+            const lb = document.getElementById('lb');
+            const frame = lb.querySelector('iframe');
+            const close = lb.querySelector('button');
+        
+            const open = url => { frame.src = url; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); };
+            const shut = () => { frame.src = 'about:blank'; lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); };
+        
+            document.querySelectorAll('.gallery a').forEach(a => {
+            a.addEventListener('click', e => { e.preventDefault(); open(a.href); });
+            });
+            close.addEventListener('click', shut);
+            lb.addEventListener('click', e => { if (e.target === lb) shut(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) shut(); });
+        }
+        makeLightbox();
+    </script>
+
+
+
+
+
+
+    <nav>
+
+    <div>
+        <a href="circles.html">circles</a>
+        <a href="rectangle-1.html">rectangle 1</a>
+        <a href="stupid-line-1.html">stupid line 1</a>
+        <a href="solar-round.html">solar-round</a>
+        <a href="cater-miskine.html">cater-love</a>
+        <a href="3-balls.html">3 balls</a>
+        <a href="arc-en-ciel.html">arc en ciel</a>
+    </div>
+
+    <div>
+        <a href="are-you-ok.html">are you ok</a>
+        <a href="click-on-me.html">click-on-me</a>
+        <a href="eye.html">eye</a>
+        <a href="hey-kids.html">hey kids</a>
+        <a href="infinite-circle.html">infinite circle</a>
+        <a href="love-is-the-message.html">love is the message</a>
+        <a href="what.html">what</a>
+    </div>
+
+    <div>
+        <a href="atlantic/atlantic.html">atlantic</a>
+        <a href="cater-wave/cater-wave.html">cater wave</a>
+        <a href="life-2026/life-2026.html">life 2026</a>
+        <a href="paille/paille.html">paille</a>
+        <a href="tchou-tchou/tchou-tchou.html">tchou tchou</a>
+        <a href="why/why.html">why</a>
+    </div>
+
+</nav>
 </body>
 </html>
